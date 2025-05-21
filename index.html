@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Separador de Canciones</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Pantalla de subir archivo -->
+  <section id="upload-section">
+    <h1>🎶 Separador de Canciones por IA</h1>
+    <h2>Paso 1: Suba o arrastre su canción</h2>
+    <div class="upload-box" id="drop-area">
+      <p>Arrastre y suelte un archivo o haga clic</p>
+      <input type="file" id="file-input" accept="audio/*" hidden>
+      <button onclick="document.getElementById('file-input').click()">Seleccionar Archivo</button>
+    </div>
+  </section>
+
+  <!-- Pantalla de procesamiento -->
+  <section id="processing-section" class="hidden">
+    <h2>🔄 Procesando archivo...</h2>
+    <div class="loader-container"></div>
+  </section>
+
+  <!-- Pantalla de resultados -->
+  <section id="result-section" class="hidden">
+    <h2>✅ Resultados:</h2>
+    <div class="tracks">
+      <div class="track green">
+        <strong>🎤 Voz</strong>
+        <audio controls src="song.mp3"></audio>
+      </div>
+      <div class="track blue">
+        <strong>🥁 Batería</strong>
+        <audio controls src="song.mp3"></audio>
+      </div>
+      <div class="track purple">
+        <strong>🎸 Bajo</strong>
+        <audio controls src="song.mp3"></audio>
+      </div>
+      <div class="track orange">
+        <strong>🎶 Música Completa</strong>
+        <audio controls src="song.mp3"></audio>
+      </div>
+    </div>
+    <button>⬇️ Descargar Todo</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

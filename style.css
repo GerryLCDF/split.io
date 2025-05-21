@@ -1,0 +1,92 @@
+:root {
+  --green: #3CDE4C;
+  --blue: #2DAEF7;
+  --purple: #D836E2;
+  --orange: #F78C2F;
+  --light-orange: #F7A668;
+  --bg-dark: #0B0B14;
+  --text-light: #ffffff;
+  --gray: #333;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 40px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Upload section */
+.upload-box {
+  border: 2px dashed var(--green);
+  padding: 40px;
+  width: 300px;
+  margin: 40px auto;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.upload-box:hover {
+  background-color: rgba(60, 222, 76, 0.1);
+}
+
+button {
+  background-color: var(--blue);
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Processing */
+.loader-container {
+  margin: 50px auto;
+  width: 80px;
+  height: 80px;
+  border: 6px solid var(--gray);
+  border-top: 6px solid var(--purple);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Result tracks */
+.tracks {
+  margin: 40px auto;
+  max-width: 600px;
+}
+
+.track {
+  background-color: var(--gray);
+  border-radius: 8px;
+  margin: 20px 0;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.track audio {
+  width: 300px;
+}
+
+.green { background-color: var(--green); }
+.blue { background-color: var(--blue); }
+.purple { background-color: var(--purple); }
+.orange { background-color: var(--orange); }

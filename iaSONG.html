@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Separador de Canciones</title>
+  <style>
+    :root {
+      --green: #3CDE4C;
+      --blue: #2DAEF7;
+      --purple: #D836E2;
+      --orange: #F78C2F;
+      --light-orange: #F7A668;
+      --bg-dark: #0B0B14;
+      --text-light: #ffffff;
+      --gray: #333;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 50px;
+    }
+
+    .step {
+      margin-top: 60px;
+    }
+
+    /* STEP 1: Upload */
+    .upload-box {
+      border: 2px dashed var(--green);
+      padding: 40px;
+      width: 300px;
+      margin: 0 auto;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .upload-box:hover {
+      background-color: rgba(60, 222, 76, 0.1);
+    }
+
+    /* STEP 2: Loader */
+    .loader-container {
+      margin: 50px auto;
+      width: 80px;
+      height: 80px;
+      border: 6px solid var(--gray);
+      border-top: 6px solid var(--purple);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* STEP 3: Tracks */
+    .tracks {
+      margin: 60px auto;
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .track {
+      background-color: var(--gray);
+      border-radius: 8px;
+      margin: 20px 0;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .track .info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .track audio {
+      width: 300px;
+    }
+
+    .green { background-color: var(--green); }
+    .blue { background-color: var(--blue); }
+    .purple { background-color: var(--purple); }
+    .orange { background-color: var(--orange); }
+    .light-orange { background-color: var(--light-orange); }
+
+    button {
+      background-color: var(--blue);
+      border: none;
+      padding: 10px 20px;
+      color: white;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎶 Separador de Canciones por IA</h1>
+
+  <!-- Paso 1 -->
+  <div class="step" id="step1">
+    <h2>Paso 1: Suba o arrastre su canción</h2>
+    <div class="upload-box">
+      Seleccione un archivo de audio
+    </div>
+  </div>
+
+  <!-- Paso 2 -->
+  <div class="step" id="step2">
+    <h2>Paso 2: Procesando archivo...</h2>
+    <div class="loader-container"></div>
+  </div>
+
+  <!-- Paso 3 -->
+  <div class="step" id="step3">
+    <h2>Paso 3: Resultados</h2>
+    <div class="tracks">
+      <div class="track green">
+        <div class="info">
+          <strong>🎤 Voz</strong>
+          <audio controls src="song.mp3"></audio>
+        </div>
+      </div>
+
+      <div class="track blue">
+        <div class="info">
+          <strong>🥁 Batería</strong>
+          <audio controls src="song.mp3"></audio>
+        </div>
+      </div>
+
+      <div class="track purple">
+        <div class="info">
+          <strong>🎸 Bajo</strong>
+          <audio controls src="song.mp3"></audio>
+        </div>
+      </div>
+
+      <div class="track orange">
+        <div class="info">
+          <strong>🎶 Música Completa</strong>
+          <audio controls src="song.mp3"></audio>
+        </div>
+      </div>
+    </div>
+
+    <button>⬇️ Descargar Todo</button>
+  </div>
+
+</body>
+</html>
